@@ -44,7 +44,6 @@ return (
 <div className="login-page">
 <div className="login-card">
 <div className="login-brand">
-<h1>LeafLens</h1>
 <div className="login-brand">
   <div className="brand-title">
     <h1>LeafLens</h1>
@@ -52,7 +51,6 @@ return (
   </div>
   <p>Smart Plant Disease Detection System</p>
 </div>
-<p>Smart Plant Disease Detection System</p>
 </div>
 <div className="login-heading">
 <h2>{isRegister ? 'Create Account' : 'Welcome Back!'}</h2>
