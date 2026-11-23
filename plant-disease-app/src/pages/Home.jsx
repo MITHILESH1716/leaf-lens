@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import ImageBox from '../components/ImageBox'
 import { soils, crops, regions, seasons } from '../data/maharashtra'
+import lensLogo from '../assets/lens-logo.png'
 
 function Home() {
   const stats = [
@@ -41,7 +42,9 @@ function Home() {
         <h2>What you can do here</h2>
         <div className="cards">
           <div className="card">
-            <div className="icon">🔍</div>
+            <div className="brand-icon">
+            <img src={lensLogo} alt="Leaf Lens" className="brand-logo" />
+            </div>
             <h3>Detect plant disease</h3>
             <p className="muted">Upload a leaf photo and get the disease name, symptoms and treatment steps.</p>
             <Link to="/detect" className="text-link">Try it →</Link>

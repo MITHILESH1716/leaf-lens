@@ -45,8 +45,12 @@ return (
 <div className="login-card">
 <div className="login-brand">
 <h1>LeafLens</h1>
-<div className="brand-icon">
-  <img src={lensLogo} alt="Leaf Lens" className="brand-logo" />
+<div className="login-brand">
+  <div className="brand-title">
+    <h1>LeafLens</h1>
+    <img src={lensLogo} alt="" className="brand-logo" />
+  </div>
+  <p>Smart Plant Disease Detection System</p>
 </div>
 <p>Smart Plant Disease Detection System</p>
 </div>
