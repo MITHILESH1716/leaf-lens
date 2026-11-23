@@ -22,7 +22,7 @@ return (
 <section className="hero">
 <span className="badge">Administrator Panel</span>
 <h1>Welcome, {user?.name || 'Administrator'}!</h1>
-<p>Manage and monitor your LeafCare platform.</p>
+<p>Manage and monitor your LeafLens platform.</p>
 </section>
 <div className="stats">
 <div className="card stat">

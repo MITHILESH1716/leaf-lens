@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { loginUser, registerUser } from '../services/api'
 import './Login.css'
+import lensLogo from '../assets/lens-logo.png'
 function Login({ onLogin }) {
 const [role, setRole] = useState('user')
 const [mode, setMode] = useState('login') // 'login' or 'register' (users only)
@@ -43,8 +44,10 @@ return (
 <div className="login-page">
 <div className="login-card">
 <div className="login-brand">
-<div className="brand-icon">&#x1F33F;</div>
-<h1>LeafCare</h1>
+<h1>LeafLens</h1>
+<div className="brand-icon">
+  <img src={lensLogo} alt="Leaf Lens" className="brand-logo" />
+</div>
 <p>Smart Plant Disease Detection System</p>
 </div>
 <div className="login-heading">
@@ -130,7 +133,7 @@ setError('')
 </p>
 )}
 <p className="login-footer">
-© 2026 LeafCare | Smart Agriculture Platform
+© 2026 LeafLens | Smart Agriculture Platform
 </p>
 </div>
 </div>

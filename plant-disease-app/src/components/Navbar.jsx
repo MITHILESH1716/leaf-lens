@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import useTheme from '../hooks/useTheme'
 import { useCart } from '../context/CartContext'
+import lensLogo from '../assets/lens-logo.png'
 
 function Navbar({ onLogout }) {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -15,7 +16,8 @@ function Navbar({ onLogout }) {
     <header className="navbar">
       <div className="container">
         <Link to="/" className="logo" onClick={closeMenu}>
-          🌿 LeafCare
+          LeafLens
+          <img src={lensLogo} alt="" className="logo-img" />
         </Link>
 
         <ul className={menuOpen ? 'nav-links open' : 'nav-links'}>

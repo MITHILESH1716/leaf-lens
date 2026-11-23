@@ -14,6 +14,7 @@ import Shop from './pages/Shop'
 import Cart from './pages/Cart'
 import Contact from './pages/Contact'
 import AdminDashboard from './pages/AdminDashboard'
+import lensLogo from './assets/lens-logo.png'
 
 
 function App() {
@@ -44,7 +45,10 @@ function App() {
       <>
         <header className="navbar">
           <div className="container">
-            <span className="logo">🌿 LeafCare Admin</span>
+            <span className="logo">
+              LeafLens Admin
+                <img src={lensLogo} alt="" className="logo-img" />
+            </span>
             <button className="btn btn-small" onClick={handleLogout}>
               Logout
             </button>

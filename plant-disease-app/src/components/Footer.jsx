@@ -1,7 +1,7 @@
 function Footer() {
   return (
     <footer className="footer">
-      <p>© 2026 LeafCare – Plant Disease Detection | College Project</p>
+      <p>© 2026 LeafLens – Plant Disease Detection | College Project</p>
     </footer>
   )
 }

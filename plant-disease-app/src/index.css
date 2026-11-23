@@ -325,3 +325,15 @@ input, textarea {
   .home-hero, .result-grid, .cart-layout { grid-template-columns: 1fr; }
   .home-hero h1, .hero h1 { font-size: 1.9rem; }
 }
+
+/* ---------- logo image ---------- */
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.logo-img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
