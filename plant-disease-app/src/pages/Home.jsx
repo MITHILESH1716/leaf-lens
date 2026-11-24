@@ -26,7 +26,7 @@ function Home() {
             <Link to="/agriculture" className="btn btn-outline">Explore farming</Link>
           </div>
         </div>
-        <ImageBox label="Hero image: farm field in Maharashtra" height={320} />
+        <ImageBox src="/images/maharashtra-map.png" label="Hero image: farm field in Maharashtra" height={320} />
       </section>
 
       <section className="stats">

@@ -13,7 +13,7 @@ export const soils = [
       'Rich in calcium, magnesium and potash, but often low in nitrogen and organic matter',
     ],
     bestCrops: ['Cotton', 'Soybean', 'Jowar', 'Sugarcane', 'Tur'],
-    image: '',
+    image: '/images/black-soil.png',
   },
   {
     id: 'laterite',
@@ -26,7 +26,7 @@ export const soils = [
       'Needs organic manure to stay productive',
     ],
     bestCrops: ['Rice', 'Alphonso mango', 'Cashew', 'Ragi', 'Coconut'],
-    image: '',
+    image: '/images/laterite-soil.png',
   },
   {
     id: 'red',
@@ -39,7 +39,7 @@ export const soils = [
       'Drains quickly and is low in humus',
     ],
     bestCrops: ['Rice', 'Groundnut', 'Pulses', 'Millets'],
-    image: '',
+    image: '/images/red-yellow-soil.png',
   },
   {
     id: 'alluvial',
@@ -52,7 +52,7 @@ export const soils = [
       'Good water availability',
     ],
     bestCrops: ['Rice', 'Coconut', 'Vegetables', 'Banana'],
-    image: '',
+    image: '/images/alluvial-coastal-soil.png',
   },
 ]
 
