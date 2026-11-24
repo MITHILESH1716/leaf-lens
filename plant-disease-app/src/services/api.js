@@ -1,5 +1,5 @@
 import diseases from '../data/diseases'
-// API configuration
+
 const API = import.meta.env.VITE_API_URL || '/api'
 
 function getToken() {
@@ -18,7 +18,6 @@ async function request(path, options = {}) {
     headers.Authorization = `Bearer ${token}`
   }
 
-  // FormData sets its own Content-Type
   if (options.body && !(options.body instanceof FormData)) {
     headers['Content-Type'] = 'application/json'
   }
@@ -37,8 +36,7 @@ async function request(path, options = {}) {
   return data
 }
 
-/* ---------- existing: fake prediction ---------- */
-
+// Prediction
 export async function predictDisease() {
   await new Promise((resolve) => setTimeout(resolve, 1500))
 
@@ -52,37 +50,33 @@ export async function predictDisease() {
   }
 }
 
-/* ---------- authentication ---------- */
-
+// Authentication
 export const loginUser = (email, password) =>
   request('/auth/login', {
     method: 'POST',
     body: JSON.stringify({ email, password }),
   })
 
-export const registerUser = (name, email, password) =>
+export const registerUser = (userData) =>
   request('/auth/register', {
     method: 'POST',
-    body: JSON.stringify({ name, email, password }),
+    body: JSON.stringify(userData),
   })
 
-/* ---------- website data ---------- */
-
+// Website data
 export const getAgriculture = (category = '') =>
   request(`/agriculture${category ? `?category=${category}` : ''}`)
 
 export const getProducts = () => request('/products')
 
-/* ---------- scans ---------- */
-
+// Scans
 export const saveScan = (scan) =>
   request('/scans', {
     method: 'POST',
     body: JSON.stringify(scan),
   })
 
-/* ---------- admin ---------- */
-
+// Admin
 export const getAdminStats = () => request('/admin/stats')
 
 export const createAgriculture = (formData) =>
@@ -119,25 +113,41 @@ export const deleteProduct = (id) =>
     method: 'DELETE',
   })
 
-/* ---------- orders and demo payments ---------- */
-
-// Create a new pending order
+// Orders and demo payments
 export const createOrder = (orderData) =>
   request('/orders', {
     method: 'POST',
     body: JSON.stringify(orderData),
   })
 
-// Fetch payment details using the QR payment token
 export const getDemoPayment = (token) =>
   request(`/orders/demo-payment/${token}`)
 
-// Simulate payment
 export const payDemoPayment = (token) =>
   request(`/orders/demo-payment/${token}/pay`, {
     method: 'POST',
   })
 
-// Check whether payment is completed
 export const getOrderStatus = (orderId) =>
   request(`/orders/${orderId}/status`)
+
+// User profile
+export const getProfile = () => request('/profile')
+
+export const updateProfile = (profileData) =>
+  request('/profile', {
+    method: 'PUT',
+    body: JSON.stringify(profileData),
+  })
+
+export const uploadProfilePicture = (file) => {
+  const formData = new FormData()
+  formData.append('picture', file)
+
+  return request('/profile/picture', {
+    method: 'POST',
+    body: formData,
+  })
+}
+
+export const getMyOrders = () => request('/profile/orders')

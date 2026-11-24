@@ -1,4 +1,3 @@
-
 import { useState } from 'react'
 import {
   Routes,
@@ -18,9 +17,10 @@ import Result from './pages/Result'
 import Shop from './pages/Shop'
 import Cart from './pages/Cart'
 import Contact from './pages/Contact'
+import Profile from './pages/Profile'
 import AdminDashboard from './pages/AdminDashboard'
-
 import DemoPayment from './pages/DemoPayment'
+
 import lensLogo from './assets/lens-logo.png'
 
 function App() {
@@ -41,30 +41,19 @@ function App() {
     setUser(null)
   }
 
-  // FIRST: Allow payment page without login
-  // No Navbar or Footer on this page
   if (location.pathname.startsWith('/demo-pay/')) {
     return (
       <Routes>
-        <Route
-          path="/demo-pay/:token"
-          element={<DemoPayment />}
-        />
-
-        <Route
-          path="*"
-          element={<Navigate to="/" replace />}
-        />
+        <Route path="/demo-pay/:token" element={<DemoPayment />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     )
   }
 
-  // SECOND: Show login page for normal website
   if (!user) {
     return <Login onLogin={handleLogin} />
   }
 
-  // THIRD: Admin dashboard
   if (user.role === 'admin') {
     return (
       <>
@@ -72,17 +61,10 @@ function App() {
           <div className="container">
             <span className="logo">
               LeafLens Admin
-              <img
-                src={lensLogo}
-                alt=""
-                className="logo-img"
-              />
+              <img src={lensLogo} alt="" className="logo-img" />
             </span>
 
-            <button
-              className="btn btn-small"
-              onClick={handleLogout}
-            >
+            <button className="btn btn-small" onClick={handleLogout}>
               Logout
             </button>
           </div>
@@ -97,7 +79,6 @@ function App() {
     )
   }
 
-  // FOURTH: Normal user website
   return (
     <>
       <Navbar onLogout={handleLogout} />
@@ -111,11 +92,9 @@ function App() {
           <Route path="/shop" element={<Shop />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/profile" element={<Profile />} />
 
-          <Route
-            path="*"
-            element={<Navigate to="/" replace />}
-          />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
 

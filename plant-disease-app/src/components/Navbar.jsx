@@ -1,4 +1,3 @@
-
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import useTheme from '../hooks/useTheme'
@@ -26,6 +25,7 @@ function Navbar({ onLogout }) {
           <li><NavLink to="/detect" onClick={closeMenu}>Detect Disease</NavLink></li>
           <li><NavLink to="/shop" onClick={closeMenu}>Shop</NavLink></li>
           <li><NavLink to="/contact" onClick={closeMenu}>Contact</NavLink></li>
+          <li><NavLink to="/profile" onClick={closeMenu}>My Profile</NavLink></li>
         </ul>
 
         <div className="nav-actions">
@@ -34,7 +34,7 @@ function Navbar({ onLogout }) {
             onClick={toggleTheme}
             aria-label="Toggle dark mode"
           >
-            {theme === 'light' ? '🌙' : '☀️'}
+            {theme === 'light' ? '🌙' : '🔆'}
           </button>
 
           <Link to="/cart" className="icon-btn" onClick={closeMenu}>

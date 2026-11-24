@@ -188,3 +188,16 @@ cursor: pointer;
   height: 34px;
   object-fit: contain;
 }
+
+.login-form select {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #d8e2d8;
+  border-radius: 8px;
+  outline: none;
+  margin-bottom: 8px;
+  background: white;
+  color: #333;
+  font-family: inherit;
+  font-size: 1rem;
+}

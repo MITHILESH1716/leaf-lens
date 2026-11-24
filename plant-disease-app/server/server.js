@@ -10,6 +10,7 @@ import productRoutes from './routes/products.js'
 import scanRoutes from './routes/scans.js'
 import adminRoutes from './routes/admin.js'
 import orderRoutes from './routes/orders.js'
+import profileRoutes from './routes/profile.js'
 
 const app = express()
 
@@ -28,17 +29,12 @@ app.use('/api/agriculture', agricultureRoutes)
 app.use('/api/products', productRoutes)
 app.use('/api/scans', scanRoutes)
 app.use('/api/admin', adminRoutes)
-
-// New order and demo payment routes
 app.use('/api/orders', orderRoutes)
+app.use('/api/profile', profileRoutes)
 
-// Error handling
 app.use((err, req, res, next) => {
   console.error(err.message)
-
-  res.status(400).json({
-    message: err.message,
-  })
+  res.status(400).json({ message: err.message })
 })
 
 const PORT = process.env.PORT || 5000
