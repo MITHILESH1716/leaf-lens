@@ -15,7 +15,7 @@ import profileRoutes from './routes/profile.js'
 const app = express()
 
 const allowedOrigins = [
-  process.env.CLIENT_URL || 'http://localhost:5173',
+  process.env.CLIENT_URL || 'https://leaf-lens-ttik.onrender.com',
   process.env.PAYMENT_PAGE_URL || 'https://leaflens-payment.netlify.app',
 ]
 
