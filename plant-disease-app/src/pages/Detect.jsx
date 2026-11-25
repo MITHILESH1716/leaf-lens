@@ -223,7 +223,7 @@ function Detect() {
       <UploadBox onAnalyze={handleAnalyze} loading={loading} />
       {loading && <p className="muted center">Analyzing your leaf… the first scan can take up to a minute while the model loads.</p>}
       {error && <p className="error center">{error}</p>}
-      {notice && <p className="muted center">{notice}</p>}
+      {notice && <p className="error center" style={{ fontWeight: 700 }}>{notice}</p>}
     </section>
   )
 }

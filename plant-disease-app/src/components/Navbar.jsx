@@ -24,7 +24,6 @@ function Navbar({ onLogout }) {
           <li><NavLink to="/agriculture" onClick={closeMenu}>Agriculture</NavLink></li>
           <li><NavLink to="/detect" onClick={closeMenu}>Detect Disease</NavLink></li>
           <li><NavLink to="/shop" onClick={closeMenu}>Shop</NavLink></li>
-          <li><NavLink to="/contact" onClick={closeMenu}>Contact</NavLink></li>
           <li><NavLink to="/profile" onClick={closeMenu}>My Profile</NavLink></li>
         </ul>
 

@@ -16,7 +16,6 @@ import Detect from './pages/Detect'
 import Result from './pages/Result'
 import Shop from './pages/Shop'
 import Cart from './pages/Cart'
-import Contact from './pages/Contact'
 import Profile from './pages/Profile'
 import AdminDashboard from './pages/AdminDashboard'
 import DemoPayment from './pages/DemoPayment'
@@ -91,7 +90,6 @@ function App() {
           <Route path="/result" element={<Result />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/contact" element={<Contact />} />
           <Route path="/profile" element={<Profile />} />
 
           <Route path="*" element={<Navigate to="/" replace />} />
