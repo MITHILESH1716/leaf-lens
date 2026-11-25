@@ -50,7 +50,7 @@ function Cart() {
           window.location.origin
 
         const paymentUrl =
-          `${publicAppUrl}/demo-pay/${qrOrder.paymentToken}`
+          `https://leaflens-payment.netlify.app/?token=${qrOrder.paymentToken}`
 
         const image = await QRCode.toDataURL(paymentUrl, {
           width: 250,

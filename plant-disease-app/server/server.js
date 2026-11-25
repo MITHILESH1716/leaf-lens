@@ -14,8 +14,19 @@ import profileRoutes from './routes/profile.js'
 
 const app = express()
 
+const allowedOrigins = [
+  process.env.CLIENT_URL || 'http://localhost:5173',
+  process.env.PAYMENT_PAGE_URL || 'https://leaflens-payment.netlify.app',
+]
+
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:5173',
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      return callback(null, true)
+    }
+
+    return callback(new Error('Not allowed by CORS'))
+  },
 }))
 
 app.use(express.json())
