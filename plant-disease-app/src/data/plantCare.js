@@ -665,7 +665,7 @@ export const plantCare = [
   },
   {
     id: 'taro',
-    name: 'Taro Leaf (Alu chi Vadi)',
+    name: 'Taro Leaf',
     aliases: ['taro leaf', 'taro', 'colocasia', 'arbi', 'alu chi vadi', 'alu', 'elephant ear'],
     care: ['Taro likes moist, fertile soil with plenty of organic matter.', 'Space plants well; crowded leaves stay wet and get diseased.'],
     problems: [
