@@ -14,10 +14,16 @@ import profileRoutes from './routes/profile.js'
 
 const app = express()
 
+// Websites allowed to call this API from a browser.
+// CLIENT_URL can hold several addresses separated by commas.
 const allowedOrigins = [
-  process.env.CLIENT_URL || 'https://leaf-lens-ttik.onrender.com',
+  'http://localhost:5173',
+  'http://127.0.0.1:5173',
+  ...(process.env.CLIENT_URL || '').split(','),
   process.env.PAYMENT_PAGE_URL || 'https://leaflens-payment.netlify.app',
 ]
+  .map((url) => url.trim().replace(/\/$/, ''))
+  .filter(Boolean)
 
 app.use(cors({
   origin: (origin, callback) => {
